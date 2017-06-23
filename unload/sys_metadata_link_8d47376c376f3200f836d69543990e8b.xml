@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload</directory>
+        <documentkey>a9642be4376f3200f836d69543990ed8</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_appgr_expense_nominal_code">
+    <x_appgr_expense_nominal_code action="INSERT_OR_UPDATE">
+        <code>1042</code>
+        <description>Sales Lotto</description>
+        <sys_created_by>admin.adrian</sys_created_by>
+        <sys_created_on>2017-06-21 11:37:18</sys_created_on>
+        <sys_id>a9642be4376f3200f836d69543990ed8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin.adrian</sys_updated_by>
+        <sys_updated_on>2017-06-21 11:37:18</sys_updated_on>
+    </x_appgr_expense_nominal_code>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin.adrian</sys_created_by>
+        <sys_created_on>2017-06-21 12:59:44</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>8d47376c376f3200f836d69543990e8b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Sales Lotto</sys_name>
+        <sys_package display_value="Expense" source="x_appgr_expense">90d7f2e4372f3200f836d69543990e37</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Expense">90d7f2e4372f3200f836d69543990e37</sys_scope>
+        <sys_update_name>sys_metadata_link_8d47376c376f3200f836d69543990e8b</sys_update_name>
+        <sys_updated_by>admin.adrian</sys_updated_by>
+        <sys_updated_on>2017-06-21 12:59:44</sys_updated_on>
+        <tablename>x_appgr_expense_nominal_code</tablename>
+    </sys_metadata_link>
+</record_update>

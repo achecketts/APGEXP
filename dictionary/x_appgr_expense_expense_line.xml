@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Expense Line" max_length="40" name="x_appgr_expense_expense_line" type="collection">
+        <element label="Amount" max_length="40" name="amount" type="float"/>
+        <element label="Code" max_length="32" name="code" reference="x_appgr_expense_nominal_code" type="reference"/>
+        <element label="Cumulative mileage" max_length="40" name="cumulative_mileage" type="float"/>
+        <element label="Expense date" max_length="40" name="date" type="glide_date"/>
+        <element label="Description" max_length="100" name="description" type="string"/>
+        <element label="Engine size" max_length="40" name="engine_size" type="float"/>
+        <element label="Expense claim" max_length="32" name="expense_claim" reference="x_appgr_expense_expense" type="reference"/>
+        <element label="Kilometres" max_length="40" name="kilometres" type="float"/>
+        <element label="Rate" max_length="40" name="rate" type="float"/>
+        <index name="index">
+            <element name="expense_claim"/>
+        </index>
+        <index name="index2">
+            <element name="code"/>
+        </index>
+    </element>
+</database>

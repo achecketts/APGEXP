@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="" label="Mileage Rate" language="en" table="x_appgr_expense_mileage_rate">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Mileage Rate</label>
+            <language>en</language>
+            <name>x_appgr_expense_mileage_rate</name>
+            <plural>Mileage Rates</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin.adrian</sys_created_by>
+            <sys_created_on>2017-06-21 13:12:08</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>3e1ab7ac376f3200f836d69543990eae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Mileage Rate</sys_name>
+            <sys_package display_value="Expense" source="x_appgr_expense">90d7f2e4372f3200f836d69543990e37</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Expense">90d7f2e4372f3200f836d69543990e37</sys_scope>
+            <sys_update_name>sys_documentation_x_appgr_expense_mileage_rate__en</sys_update_name>
+            <sys_updated_by>admin.adrian</sys_updated_by>
+            <sys_updated_on>2017-06-21 13:12:08</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_appgr_expense_expense</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_appgr_expense_expense">codeISNOTEMPTY^EQ<item endquery="false" field="code" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Insert Expense Line</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[//(function executeRule(current, previous /*null when async*/) {
+	
+	// Get the Cumulative Mileage from latest Expense Claim submitted this year.
+	
+	
+	// Save the details
+	var e = current.engine_size;
+	var cum = current.cumulative_mileage_as_per_last_claim;
+	var km = current.kilometres;
+	var sum = 0;
+	var rate = 0;
+	var total = 0;
+	var amount = 0;
+	gs.info(e);
+	
+	var ra = new GlideRecord('x_appgr_expense_mileage_rate');
+	ra.addQuery('engine_size_from', '<' , e );
+	ra.addQuery('engine_size_to', '>=' , e );
+	ra.addQuery('range_from', '<=', cum);
+	ra.addQuery('range_to', '>=', cum);
+	ra.query();
+	while (ra.next()){
+		rate = ra.rate;
+		sum = rate * km;
+	}
+	
+	//This function will be automatically called when this rule is processed.
+	var gr = new GlideRecord('x_appgr_expense_expense_line');
+	gr.code = current.code;
+	gr.description = current.description;
+	gr.date = current.expense_date;
+	gr.expense_claim = current.sys_id;
+	gr.kilometres = current.kilometres;
+	gr.engine_size = current.engine_size;
+	gr.cumulative_mileage = current.cumulative_mileage_as_per_last_claim;
+	gr.rate = rate;
+	gr.expense_claim = current.sys_id;
+	if (sum  > 0){
+		gr.amount = sum;
+		current.amount = sum;
+		if (current.revised_cumulative_mileage == ''){
+		current.revised_cumulative_mileage = current.cumulative_mileage_as_per_last_claim + current.kilometres;
+		}
+		else {
+			current.revised_cumulative_mileage = current.revised_cumulative_mileage + current.kilometres;
+		}
+	}
+	else {
+		gr.amount = current.amount;
+	}
+	
+	gr.insert();
+	
+	current.code = '';
+	current.description = '';
+	current.product_description = '';
+	current.expense_date = '';
+	current.kilometres = '';
+	current.total = current.amount + current.total;
+	current.amount = '';
+	//})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin.adrian</sys_created_by>
+        <sys_created_on>2017-06-21 10:12:10</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b26f47ec372f3200f836d69543990e9c</sys_id>
+        <sys_mod_count>50</sys_mod_count>
+        <sys_name>Insert Expense Line</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Expense" source="x_appgr_expense">90d7f2e4372f3200f836d69543990e37</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Expense">90d7f2e4372f3200f836d69543990e37</sys_scope>
+        <sys_update_name>sys_script_b26f47ec372f3200f836d69543990e9c</sys_update_name>
+        <sys_updated_by>admin.adrian</sys_updated_by>
+        <sys_updated_on>2017-06-22 10:38:01</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=b26f47ec372f3200f836d69543990e9c"/>
+</record_update>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Mileage Rate" max_length="40" name="x_appgr_expense_mileage_rate" type="collection">
+        <element label="Engine size from" max_length="40" name="engine_size_from" type="float"/>
+        <element label="Engine size to" max_length="40" name="engine_size_to" type="float"/>
+        <element label="Range from" max_length="40" name="range_from" type="float"/>
+        <element label="Range to" max_length="40" name="range_to" type="float"/>
+        <element label="Rate" max_length="40" name="rate" type="float"/>
+    </element>
+</database>

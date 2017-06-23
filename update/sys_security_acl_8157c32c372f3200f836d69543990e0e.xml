@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Default access control on x_appgr_expense_nominal_code</description>
+        <name>x_appgr_expense_nominal_code</name>
+        <operation display_value="create">create</operation>
+        <script/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin.adrian</sys_created_by>
+        <sys_created_on>2017-06-21 09:30:17</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>8157c32c372f3200f836d69543990e0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_appgr_expense_nominal_code</sys_name>
+        <sys_package display_value="Expense" source="x_appgr_expense">90d7f2e4372f3200f836d69543990e37</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Expense">90d7f2e4372f3200f836d69543990e37</sys_scope>
+        <sys_update_name>sys_security_acl_8157c32c372f3200f836d69543990e0e</sys_update_name>
+        <sys_updated_by>admin.adrian</sys_updated_by>
+        <sys_updated_on>2017-06-21 09:30:17</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

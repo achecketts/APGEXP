@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Expense" max_length="40" name="x_appgr_expense_expense" type="collection">
+        <element label="Amount" max_length="40" name="amount" type="float"/>
+        <element attributes="ref_auto_completer=AJAXTableCompleter,ref_ac_columns=code;description,ref_ac_order_by=code;description,ref_ac_columns_search=true" hint="Common codes:  4681 : Travel - Mileage,  4682 : Travel - Flights (Flights &amp; Baggage),  4685 - Travel - All Other (Parkingm Tolls, Taxi, Train, Bus, Boat etc),  4686 : Hotel &amp; meals/drinks (Hotels, B&amp;B's. Overnight Allowance, Meals, Drunks), 4518 : Finance &amp; Analytics (Costs incurred during EXL visits), 4689 : Expenses Other (Phones, Gifts, Cakes, Medical etc)." label="Code" max_length="32" name="code" reference="x_appgr_expense_nominal_code" type="reference"/>
+        <element label="Cumulative mileage as per last claim" max_length="40" name="cumulative_mileage_as_per_last_claim" type="float"/>
+        <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
+        <element label="Description" max_length="100" name="description" type="string"/>
+        <element label="Engine size" max_length="40" name="engine_size" type="float"/>
+        <element label="Expense date" max_length="40" name="expense_date" type="glide_date"/>
+        <element label="kilometres" max_length="40" name="kilometres" type="float"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Requested by" mandatory="true" max_length="32" name="requested_by" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element label="Revised cumulative mileage" max_length="40" name="revised_cumulative_mileage" type="float"/>
+        <element choice="1" default="Draft" label="State" max_length="40" name="state" read_only="true" type="choice">
+            <choice>
+                <element label="Draft" sequence="1" value="Draft"/>
+                <element label="Requested" sequence="2" value="Requested"/>
+                <element label="Approved" sequence="3" value="Approved"/>
+                <element label="Rejected" sequence="4" value="Rejected"/>
+            </choice>
+        </element>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element label="Total" max_length="40" name="total" read_only="true" type="float"/>
+        <index name="index">
+            <element name="code"/>
+        </index>
+        <index name="index2">
+            <element name="requested_by"/>
+        </index>
+    </element>
+</database>
